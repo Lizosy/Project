@@ -1,132 +1,72 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
-    overflow: hidden; /* Disable scrolling */
-}
-
-textarea:focus, input:focus {
-    outline: none;
-}
-
-ul li {
-    list-style: none;
-}
-
-h1 {
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #000000;
-    font-size: 32px;
-    width: 200px;
-    text-align: center;
-    margin: 30px 100px;
-}
-
-ul {
-    display: inline-block;
-}
-
-#contact {
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  #contact {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
     background: #fff;
-    position: relative;
-    width: 400px;
-    max-width: 100%;
-    margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
-}
-
-.js #contact {
-    position: absolute;
-    top: 3em;
-    display: none;
-    left: 0;
-    right: 0;
-}
-
-input {
-    border: 0;
-    margin: 1em 40px;
-    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: calc(50% - 10px);
     padding: 10px;
-    border-bottom: 2px solid #000000;
-    background: none;
-    font-family: 'Fontawesome', 'Source Sans Pro', sans-serif;
-    display: block;
-    color: #000000;
-}
-
-textarea {
-    border: 0;
-    width: 300px;
-    height: 100px;
-    display: block;
-    margin-left: 40px;
-    background: none;
-    padding: 10px;
-    font-family: 'Fontawesome', 'Source Sans Pro', sans-serif;
-    border-bottom: 2px solid #000000;
-    color: #000000;
-}
-
-#submit {
-    margin: 3em auto 4em;
-    border: 2px solid #000000;
-    color: #000000;
-}
-
-#submit:hover {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+  }
+  
+  input[type="text"]:last-child,
+  input[type="email"]:last-child {
+    margin-right: 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #333;
     color: #fff;
-}
-
-.btn {
-    background: none;
-    border: 2px solid #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    margin: 15em auto;
-    padding: 1.2em 2em;
-    color: #ffffff;
-    font-family: 'Open Sans';
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: ease all .3s;
-    display: block;
-}
-
-.btn:hover {
-    background: #000000;
-    color: #fff;
-    border: #000000 solid 2px;
-}
-
-.btn:active {
-    background: #000000;
-    color: #fff;
-    border: #000000 solid 2px;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: -10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .btn:hover {
+    background: #555;
+  }
+  
+  #canvasContainer {
+    margin-top: 20px;
+  }
+  
+  .close {
     cursor: pointer;
-    font-weight: 400;
-    font-size: 3em;
-    color: #ee4444;
-}
-
-@media (max-width: 765px) {
-    textarea {
-        width: 250px;
-    }
-    input {
-        width: 250px;
-    }
-}
+    background: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: -30px -20px 0 0;
+    float: right;
+    border-radius: 50%;
+  }
+  
+  .close:hover {
+    background: #555;
+  }
+  
+  /* Adjust the font awesome icon styles if necessary */
+  [class^="fa-"]:before,
+  [class*=" fa-"]:before {
+    font-family: FontAwesome;
+    padding-right: 10px;
+  }  
