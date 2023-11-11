@@ -8,6 +8,8 @@ let userName = '';
 let userSurname = '';
 
 function setup() {
+    let cvsWidth = min(windowWidth, 700);
+    let cvsHeight = (cvsWidth / 700) * 900;
     pixelDensity(2);
     canvas = createCanvas(700, 900);
     canvas.parent('canvasContainer');
@@ -42,19 +44,27 @@ function displayArtwork() {
     document.getElementById('inputArea').style.display = 'none';
     document.getElementById('canvasContainer').style.display = 'block';
     redraw();
-    addDownloadButton();
+    addDownloadButton(); // Make sure this function is called
 }
 
 function addDownloadButton() {
-    // Create a new button element
     var downloadButton = document.createElement('button');
-    downloadButton.innerHTML = 'Download Image';
-    downloadButton.className = 'download-btn'; // Apply the CSS class
-    downloadButton.onclick = function() {
-        // Use p5.js to save the canvas content as an image
+    downloadButton.innerText = 'Download Artwork 🖼️';
+    downloadButton.classList.add('download-btn');
+    downloadButton.addEventListener('click', function() {
         saveCanvas(canvas, 'SWU_OpenHouse_Artwork', 'png');
-    };
+    });
 
-    // Append the button to the canvas container
-    document.getElementById('canvasContainer').appendChild(downloadButton);
+    // Append the button only if it does not already exist
+    var existingButton = document.querySelector('.download-btn');
+    if (!existingButton) {
+        document.getElementById('canvasContainer').appendChild(downloadButton);
+    }
+}
+
+function windowResized() {
+    let cvsWidth = min(windowWidth, 700);
+    let cvsHeight = (cvsWidth / 700) * 900; // Maintain the aspect ratio
+    resizeCanvas(cvsWidth, cvsHeight);
+    redraw(); // Redraw the canvas with the new dimensions
 }

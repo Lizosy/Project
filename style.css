@@ -6,52 +6,89 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f8f8f8;
-    font-family: 'Arial', sans-serif;
+    background-color: #fde2e4;
+    font-family: 'Roboto', sans-serif;
     color: #333;
 }
 
 .bordered-box {
-    border: 2px solid #e74c3c;
+    border: 2px solid #f9d5e5;
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     width: 90%;
-    max-width: 340px; /* Adjust based on the desired width */
+    max-width: 340px;
     margin: 20px;
+    transition: transform 0.2s;
+}
+
+.bordered-box:hover {
+    transform: scale(1.05);
+}
+
+.decorative-bar {
+    background-color: #eec4c4;
+    height: 100%;
+    width: 10px;
+    border-radius: 15px 0 0 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 #inputArea {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Spacing between inputs */
+    gap: 10px;
 }
 
 #inputArea input[type="text"],
 #inputArea button {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #f9d5e5;
+    border-radius: 20px;
     padding: 15px;
     font-size: 16px;
-    outline: none; /* Removes the default focus outline */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#inputArea input[type="text"]:focus {
+    border-color: #eec4c4;
 }
 
 #inputArea input[type="text"] {
-    background-color: #fafafa;
+    background-color: #fff0f3;
 }
 
 #inputArea button {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    border: none;
-    transition: background-color 0.3s ease;
+    background-color: #f9d5e5;
+    color: #555;
+    font-weight: 500;
     cursor: pointer;
 }
 
 #inputArea button:hover {
-    background-color: #2980b9;
+    background-color: #eec4c4;
+    color: #333;
+}
+
+.download-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f9d5e5;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+    background-color: #eec4c4;
+    color: #333;
 }
 
 @media (max-width: 768px) {
@@ -62,39 +99,18 @@ body {
     #inputArea input[type="text"], 
     #inputArea button {
         padding: 12px;
-        font-size: 18px; /* Larger font size for better readability on mobile */
+        font-size: 18px;
     }
 }
 
-
 #canvasContainer {
-    width: 90vw; /* Use viewport width to define canvas size */
-    max-width: 700px; /* Max width of the canvas */
+    width: 90vw; /* Make the canvas width responsive */
+    max-width: 700px; /* Set a max-width if needed */
     margin-top: 20px;
-    display: block; /* Change to block to make it visible */
-    /* Center the canvas container */
-    display: flex;
-    justify-content: center;
+    display: block; /* Changed from none to block to be visible */
 }
 
 canvas {
-    width: 100% !important; /* Make the canvas width responsive */
-    height: auto !important; /* Set height to auto to maintain aspect ratio */
-    max-width: 700px; /* Optional: Set a max-width for larger screens */
-}
-
-.download-btn {
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #2980b9;
+    max-width: 100%; /* Ensures canvas is not wider than its container */
+    height: auto !important; /* Keeps the aspect ratio of the canvas */
 }
