@@ -42,4 +42,19 @@ function displayArtwork() {
     document.getElementById('inputArea').style.display = 'none';
     document.getElementById('canvasContainer').style.display = 'block';
     redraw();
+    addDownloadButton();
+}
+
+function addDownloadButton() {
+    // Create a new button element
+    var downloadButton = document.createElement('button');
+    downloadButton.innerHTML = 'Download Image';
+    downloadButton.className = 'download-btn'; // Apply the CSS class
+    downloadButton.onclick = function() {
+        // Use p5.js to save the canvas content as an image
+        saveCanvas(canvas, 'SWU_OpenHouse_Artwork', 'png');
+    };
+
+    // Append the button to the canvas container
+    document.getElementById('canvasContainer').appendChild(downloadButton);
 }

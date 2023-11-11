@@ -65,3 +65,36 @@ body {
         font-size: 18px; /* Larger font size for better readability on mobile */
     }
 }
+
+
+#canvasContainer {
+    width: 90vw; /* Use viewport width to define canvas size */
+    max-width: 700px; /* Max width of the canvas */
+    margin-top: 20px;
+    display: block; /* Change to block to make it visible */
+    /* Center the canvas container */
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    width: 100% !important; /* Make the canvas width responsive */
+    height: auto !important; /* Set height to auto to maintain aspect ratio */
+    max-width: 700px; /* Optional: Set a max-width for larger screens */
+}
+
+.download-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
