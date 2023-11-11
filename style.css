@@ -5,56 +5,63 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    min-height: 100vh;
+    background-color: #f8f8f8;
     font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
 .bordered-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    position: relative;
-    width: 350px; /* Adjust as needed */
-}
-
-.decorative-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 10px; /* Adjust thickness of the bar here */
-    background-color: #e74c3c; /* Adjust color of the bar here */
+    border: 2px solid #e74c3c;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 90%;
+    max-width: 340px; /* Adjust based on the desired width */
+    margin: 20px;
 }
 
 #inputArea {
-    margin-left: 20px; /* Offset for the decorative bar */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between inputs */
 }
 
 #inputArea input[type="text"],
 #inputArea button {
-    display: block;
-    width: calc(100% - 20px); /* Adjust width considering padding */
-    margin-bottom: 10px; /* Space between inputs and button */
-    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    outline: none; /* Removes the default focus outline */
 }
 
 #inputArea input[type="text"] {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #fafafa;
 }
 
 #inputArea button {
-    background-color: #333;
+    background-color: #3498db;
     color: white;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
 #inputArea button:hover {
-    background-color: #444;
+    background-color: #2980b9;
 }
 
-#canvasContainer {
-    display: none; /* Canvas is hidden until form is submitted */
+@media (max-width: 768px) {
+    .bordered-box {
+        width: 95%;
+    }
+
+    #inputArea input[type="text"], 
+    #inputArea button {
+        padding: 12px;
+        font-size: 18px; /* Larger font size for better readability on mobile */
+    }
 }
